@@ -28,7 +28,6 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.*;
-import org.opendatakit.activities.BaseActivity;
 import org.opendatakit.activities.IAppAwareActivity;
 import org.opendatakit.data.ColorGuide;
 import org.opendatakit.data.ColorGuideGroup;

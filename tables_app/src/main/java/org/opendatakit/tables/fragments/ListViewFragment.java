@@ -29,4 +29,9 @@ public class ListViewFragment extends AbsWebTableFragment {
    */
   @SuppressWarnings("unused")
   private static final String TAG = ListViewFragment.class.getSimpleName();
+
+  public void databaseAvailable() {
+    super.databaseAvailable();
+    TableAddAccessChecker.check(this);
+  }
 }

@@ -188,6 +188,7 @@ public class SpreadsheetFragment extends AbsTableDisplayFragment
       theView.removeAllViews();
       theView.addView(textView);
     }
+    TableAddAccessChecker.check(this);
   }
 
   /**
