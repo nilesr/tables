@@ -329,6 +329,7 @@ public class TableMapInnerFragment extends MapFragment implements OnMapReadyCall
 
       // Find the locations from entries in the table.
       LatLngBounds.Builder builder = new LatLngBounds.Builder();
+      boolean includedAtLeastOne = false;
 
       // Go through each row and create a marker at the specified location.
       for (int i = 0; i < table.getNumberOfRows(); i++) {
@@ -345,6 +346,7 @@ public class TableMapInnerFragment extends MapFragment implements OnMapReadyCall
         if (location == null) {
           continue;
         }
+        includedAtLeastOne = true;
         builder.include(location);
 
         if (map != null) {
@@ -359,7 +361,9 @@ public class TableMapInnerFragment extends MapFragment implements OnMapReadyCall
         }
       }
 
-    map.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), PADDING));
+    if (includedAtLeastOne) {
+      map.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), PADDING));
+    }
     map.setOnMarkerClickListener(getOnMarkerClickListener());
     }
   }
